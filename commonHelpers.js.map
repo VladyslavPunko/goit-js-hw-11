@@ -1,1 +1,1 @@
-{"version":3,"file":"commonHelpers.js","sources":[],"sourcesContent":[],"names":[],"mappings":""}
+{"version":3,"file":"commonHelpers.js","sources":["../src/main.js"],"sourcesContent":["import iziToast from 'izitoast';\nimport 'izitoast/dist/css/iziToast.min.css';\nimport closeIcon from './img/bi_x-octagon.png';\nimport SimpleLightbox from 'simplelightbox';\nimport 'simplelightbox/dist/simple-lightbox.min.css';\n\nconst form = document.querySelector('.form');\n"],"names":[],"mappings":"0uBAMa,SAAS,cAAc,OAAO"}
