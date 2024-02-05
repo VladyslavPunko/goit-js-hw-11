@@ -29,6 +29,7 @@ function onSearchButton(e){
         });
         return
     }
+    form.insertAdjacentHTML('afterend', '<span class="loader"></span>');
     list.innerHTML = '';
   
   getPhotos(inputSearch)
@@ -37,7 +38,7 @@ function onSearchButton(e){
 
 function getPhotos(inputSearch){
 
-const searchParams= new URLSearchParams({
+const searchParams = new URLSearchParams({
     key: "42209591-dcd9ad54ecaffcfe9e9b64d04",
     q: `${inputSearch}`,
     image_type: "photo",
@@ -52,11 +53,21 @@ return fetch(url)
     if(arrayPhotos.length === 0){
         noImages();
     }
+    const spanLoader = document.querySelector('.loader');
     renderPhoto(arrayPhotos);
-    simpleLightbox()
-
-
+    simpleLightbox();
+    spanLoader.remove();
 })
+.catch(error => {
+    iziToast.error({
+        messageColor: '#FFF',
+        color: '#EF4040',
+        iconUrl: closeIcon,
+        position: 'topRight',
+        message: `${error}`,
+    })
+});
+
 
 }
 
